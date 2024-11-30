@@ -1,4 +1,4 @@
 #pragma once
 #include "commons.h"
 
-uint32_t strtoint(char* ip_str);
+IPv4_t strtoIntIP(char* ip_str);
