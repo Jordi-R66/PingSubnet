@@ -1,10 +1,11 @@
 #include "headers/commons.h"
+#include "headers/convert.h"
 
 Endian Endianness;
 
 int32_t main() {
 	Endianness = getEndianness();
-	struct ifaddrs* ifaddr, * ifa;
+	/*struct ifaddrs* ifaddr, * ifa;
 
 	if (getifaddrs(&ifaddr) == -1) {
 		perror("getifaddrs");
@@ -40,9 +41,9 @@ int32_t main() {
 		}
 	}
 
-	freeifaddrs(ifaddr);
+	freeifaddrs(ifaddr);*/
 
-	printf("%u\n", Endianness);
+	printf("0x%X\n", strtoIntIP("192.168.0.55"));
 
 	return 0;
 }
