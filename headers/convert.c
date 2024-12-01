@@ -38,8 +38,8 @@ IPv4_t strtoIntIP(char* ip_str) {
 				octet_val += octet[j] * custom_pow(10, exp);
 			}
 
-			ip += ((uint32_t)octet_val);
 			ip <<= 8;
+			ip += ((uint32_t)octet_val);
 
 			memset(octet, -1, 3);
 			octet_len = 0;
