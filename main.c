@@ -43,7 +43,10 @@ int32_t main() {
 
 	freeifaddrs(ifaddr);*/
 
-	printf("0x%X\n", strtoIntIP("192.168.0.55"));
+	IPv4_t test_ip = strtoIntIP("192.168.50.25");
+	printf("0x%X\n", test_ip);
+	test_ip = SwitchEndianness(test_ip);
+	printf("0x%X\n", test_ip);
 
 	return 0;
 }
