@@ -50,3 +50,15 @@ IPv4_t strtoIntIP(char* ip_str) {
 
 	return ip;
 }
+
+IPv4_t SwitchEndianness(IPv4_t ip) {
+	uint8_t* res = (uint8_t*)&ip;
+
+	for (int8_t i=0; i<2; i++) {
+		res[i] += res[3-i];
+		res[3-i] = res[i] - res[3-i];
+		res[i] -= res[3-i];
+	}
+
+	return *(IPv4_t*)res;
+}
