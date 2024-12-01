@@ -1,6 +1,6 @@
 #include "convert.h"
 
-uint8_t pow(uint8_t a, uint8_t b) {
+uint8_t custom_pow(uint8_t a, uint8_t b) {
 	uint8_t res = 1;
 
 	for (uint8_t i=0; i<b; i++) {
@@ -35,7 +35,7 @@ IPv4_t strtoIntIP(char* ip_str) {
 			for (int8_t j = 0; j < octet_len; j++) {
 				uint8_t exp = octet_len - j - 1;
 
-				octet_val += octet[j] * pow(10, exp);
+				octet_val += octet[j] * custom_pow(10, exp);
 			}
 
 			ip += ((uint32_t)octet_val);
