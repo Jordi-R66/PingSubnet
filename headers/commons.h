@@ -5,9 +5,24 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
-#include <ifaddrs.h>
-#include <arpa/inet.h>
 #include <stdbool.h>
+#include <math.h>
+
+#ifdef __linux__
+	#include <netdb.h>
+	#include <netinet/in.h> 
+	#include <sys/socket.h>
+	#include <sys/types.h>
+	#include <arpa/inet.h>
+	#include <ifaddrs.h>
+	#include <unistd.h>
+#elif defined(_WIN32)
+	#include <winsock2.h>
+	#include <iphlpapi.h>
+	#include <ws2tcpip.h>
+	#pragma comment(lib, "iphlpapi.lib")
+	#pragma comment(lib, "ws2_32.lib")
+#endif
 
 typedef uint32_t IPv4_t;
 
