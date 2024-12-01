@@ -5,7 +5,7 @@ Endian Endianness;
 
 int32_t main() {
 	Endianness = getEndianness();
-	/*struct ifaddrs* ifaddr, * ifa;
+	struct ifaddrs* ifaddr, * ifa;
 
 	if (getifaddrs(&ifaddr) == -1) {
 		perror("getifaddrs");
@@ -35,13 +35,13 @@ int32_t main() {
 			}
 
 			printf("%s\n", ip);
-			uint32_t v = strtoint(ip);
+			//uint32_t v = strtoint(ip);
 
 			printf("Interface: %s, IP: %s, Netmask: %s\n", ifa->ifa_name, ip, netmask);
 		}
 	}
 
-	freeifaddrs(ifaddr);*/
+	freeifaddrs(ifaddr);
 
 	IPv4_t test_ip = strtoIntIP("192.168.50.25");
 	printf("0x%X\n", test_ip);
